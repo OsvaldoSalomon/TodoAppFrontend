@@ -5,11 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class AuthenticationService {
 
-  constructor() { }
+  constructor() {
+  }
 
   authenticate(username, password) {
     console.log('before ' + this.isUserLoggedIn());
-    if (username==="user" && password === '123') {
+    if (username === "Osvaldo" && password === '123') {
       sessionStorage.setItem('authenticateUser', username);
       console.log('after ' + this.isUserLoggedIn());
       return true;
