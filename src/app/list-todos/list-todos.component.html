@@ -5,24 +5,26 @@
   <table class="table table-sm table-bordered">
     <thead>
     <tr>
-      <th>ID</th>
       <th>Description</th>
       <th>Target Date</th>
       <th>Is Completed?</th>
-      <th>Actions</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let todo of todos">
-      <td>{{todo.id}}</td>
       <td>{{todo.description}}</td>
       <td>{{todo.targetDate | date}}</td>
       <td>{{todo.done}}</td>
+      <td><button class="btn btn-warning" (click)="updateTodo(todo.id)">Update</button></td>
       <td><button class="btn btn-danger" (click)="deleteTodo(todo.id)">Delete</button></td>
     </tr>
     </tbody>
-
   </table>
+  <div class="row">
+    <button class="btn btn-primary" (click)="addTodo()">Add a Todo</button>
+  </div>
 </div>
 
 
