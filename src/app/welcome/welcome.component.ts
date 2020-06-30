@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
 import { WelcomeDataService } from "../services/data/welcome-data.service";
+import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
@@ -17,13 +17,13 @@ export class WelcomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.message);
     // console.log(this.route.snapshot.params['name']);
     this.name = this.route.snapshot.params['name'];
   }
 
   getWelcomeMessage() {
-    console.log(this.welcomeDataService.executeHelloWorldBeanService());
+    //console.log(this.service.executeHelloWorldBeanService());
+
     this.welcomeDataService.executeHelloWorldBeanService().subscribe(
       response => this.handleSuccessfulResponse(response),
       error => this.handleErrorResponse(error)
@@ -32,7 +32,7 @@ export class WelcomeComponent implements OnInit {
 
   getWelcomeMessageWithParameter() {
     console.log(this.welcomeDataService.executeHelloWorldBeanService());
-    this.welcomeDataService.executeHelloWorldServiceWPathVar(this.name).subscribe(
+    this.welcomeDataService.executeHelloWorldServiceWithPathVariable(this.name).subscribe(
       response => this.handleSuccessfulResponse(response),
       error => this.handleErrorResponse(error)
     );
@@ -44,11 +44,18 @@ export class WelcomeComponent implements OnInit {
     // console.log(response.message);
   }
 
-  handleErrorResponse(error){
+  handleErrorResponse(error) {
     // console.log(error);
     // console.log(error.error);
     // console.log(error.error.message);
     this.welcomeMessageService = error.error.message
   }
+}
+
+export class Class1 {
+
+}
+
+export class Class2 {
 
 }

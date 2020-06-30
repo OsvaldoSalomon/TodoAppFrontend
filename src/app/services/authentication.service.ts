@@ -5,14 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class AuthenticationService {
 
-  constructor() {
-  }
+  constructor() { }
 
   authenticate(username, password) {
-    console.log('before ' + this.isUserLoggedIn());
+    // console.log('before ' + this.isUserLoggedIn());
     if (username === "Osvaldo" && password === '123') {
       sessionStorage.setItem('authenticateUser', username);
-      console.log('after ' + this.isUserLoggedIn());
+      // console.log('after ' + this.isUserLoggedIn());
       return true;
     }
     return false;
@@ -28,4 +27,3 @@ export class AuthenticationService {
   }
 
 }
-
