@@ -27,7 +27,7 @@ export class EditTodoComponent implements OnInit {
   }
 
   saveTodo() {
-    if (this.id === -1) {
+    if (this.id == -1) {
       // Create todos
       this.todoService.createTodo('Osvaldo', this.todo).subscribe(
         data => {
